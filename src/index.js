@@ -20,7 +20,6 @@ function refreshWeather(response) {
   }
   iconElement.innerHTML = `<img src="${iconUrl}" class="weather-app-icon" />`;
 
-  // Start updating the time every second
   startLiveTimeUpdate(date);
   getForecast(response.data.city);
 }
@@ -52,7 +51,7 @@ function formatDate(date) {
 
 function isNightTime(date) {
   let hours = date.getHours();
-  return hours < 6 || hours > 18; // Assuming night time is from 6 PM to 6 AM
+  return hours < 6 || hours > 18;
 }
 
 function startLiveTimeUpdate(initialDate) {
@@ -65,10 +64,8 @@ function startLiveTimeUpdate(initialDate) {
     timeElement.innerHTML = formatDate(updatedDate);
   }
 
-  // Initial call to display the time immediately
   updateTime();
 
-  // Update time every second
   setInterval(updateTime, 1000);
 }
 
@@ -129,5 +126,4 @@ function displayForecast(response) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSearchSubmit);
 
-// Default city
 searchCity("Johannesburg");
