@@ -149,7 +149,6 @@ footer {
   color: rgb(0, 0, 0);
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .weather-app {
     padding: 15px;
